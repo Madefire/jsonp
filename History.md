@@ -1,4 +1,9 @@
 
+0.3.0 / 2017-07-20
+==================
+
+  * remove debug dependency (https://github.com/visionmedia/debug/issues/304)
+
 0.2.1 / 2016-10-31
 ==================
 

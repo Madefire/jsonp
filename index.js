@@ -1,10 +1,4 @@
 /**
- * Module dependencies
- */
-
-var debug = require('debug')('jsonp');
-
-/**
  * Module exports.
  */
 
@@ -77,7 +71,7 @@ function jsonp(url, opts, fn){
   }
 
   window[id] = function(data){
-    debug('jsonp got', data);
+    console.error('jsonp', 'jsonp got', data);
     cleanup();
     if (fn) fn(null, data);
   };
@@ -86,7 +80,7 @@ function jsonp(url, opts, fn){
   url += (~url.indexOf('?') ? '&' : '?') + param + '=' + enc(id);
   url = url.replace('?&', '?');
 
-  debug('jsonp req "%s"', url);
+  console.error('jsonp', 'jsonp req "%s"', url);
 
   // create script
   script = document.createElement('script');
